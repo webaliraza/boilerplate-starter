@@ -1,0 +1,56 @@
+// Define font face(s) here
+// @font-face {
+//     font-family: 'Font_Name';
+//     src: url('fonts/font.eot'); /* IE9 Compat Modes */
+//     src: url('fonts/font.woff2') format('woff2'), /* Super Modern Browsers */
+//     url('fonts/font.woff') format('woff'); /* Pretty Modern Browsers */
+//     font-weight: normal;
+// }
+
+// Define Combinations of Font Sizes and Line Heights
+$font-sizes: (
+
+    'big-heading': (
+        s: 72px,
+        l: 88px
+    ),
+
+    'heading': (
+        s: 48px,
+        l: 64px
+    ),
+
+    'title': (
+        s: 24px,
+        l: 40px
+    ),
+
+    'content': (
+        s: 16px,
+        l: 24px
+    ),
+
+    'small-content': (
+        s: 12px,
+        l: 18px
+    )
+);
+
+// The code below will allow to use font-size with function-variables
+// font-size: font-size(big-heading)
+@function font-size($name) {
+    @return map-deep-get($font-sizes, $name, "s");
+}
+
+// The code below will allow to use line-height with function-variables
+// line-height: line-height(big-heading)
+@function font-size($name) {
+    @return map-deep-get($font-sizes, $name, "l");
+}
+
+// Font Size & Line Height
+// @include font-size-line-height(font-size(content), line-height(content));
+@mixin font-size-line-height($font-size, $line-height: $font-size) {
+    font-size: $font-size;
+    line-height: $line-height;
+}

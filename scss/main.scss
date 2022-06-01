@@ -1,0 +1,17 @@
+// Bootstrap Overrides
+:root {
+    --bs-body-color: #000;
+    --bs-primary-rgb: 0, 0, 0;
+    --bs-font-sans-serif: 'Montserrat', system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+// Base Styling
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/typography';
+@import 'base/colors';
+@import 'base/buttons';
+
+// Project and Page Centric Styling
+@import 'partials/common';
+@import 'partials/home';

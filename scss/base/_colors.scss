@@ -1,0 +1,31 @@
+// Fill your color map according to the design of the project
+$primary-color: (
+
+    // Constant
+    'white': #FFFFFF,
+    'black': #000000,
+    'success': #70B246,
+    'error': #D96758,
+
+    // Project Specific
+    'text': #333333,
+    'link': #38BEBE
+);
+
+// The code below will use the color map to generate classes to use in the project
+// EXAMPLE:
+// .color-text
+// .color-link
+@each $name, $color in $primary-color {
+    .color-#{$name} {
+        color: $color;
+    }
+}
+
+// The code below will allow you to use the same colors as variables in CSS as well
+// EXAMPLE:
+// color: use-color('text')
+// color: use-color('link')
+@function use-color($color) {
+    @return map-get($primary-color, $color);
+}
